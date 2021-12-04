@@ -11,6 +11,9 @@ import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants;
 import frc.robot.commands.TankDrive;
+import frc.robot.subsystems.Intake;
+import frc.robot.commands.IntakeForward;
+import frc.robot.commands.IntakeReverse;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -21,8 +24,11 @@ import frc.robot.commands.TankDrive;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   public final Drivetrain drivetrain = new Drivetrain();
+  public final Intake intake = new Intake();
   public static Joystick joystickLeft = new Joystick(Constants.JOYSTICK_LEFT);
   public static Joystick joystickRight = new Joystick(Constants.JOYSTICK_RIGHT);
+  public static XboxController xbox =  new XboxController(Constants.XBOX_CONTROLLER);
+  public static double intakebutton = xbox.getRawAxis(Constants.INTAKE_AXIS);
 
   public static double joystickLeftAxis = joystickLeft.getRawAxis(Constants.JOYSTICK_LEFTAXIS);
   public static double joystickRightAxis = joystickRight.getRawAxis(Constants.JOYSTICK_RIGHTAXIS);
@@ -45,6 +51,7 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     drivetrain.setDefaultCommand(new TankDrive(drivetrain, joystickLeftAxis, joystickRightAxis, joystickRightRotate));
+    intake.setDefaultCommand(new IntakeForward(intake, intakebutton));
   }
 
   /**
