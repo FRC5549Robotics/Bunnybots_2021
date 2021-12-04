@@ -21,6 +21,7 @@ import frc.robot.commands.TankDrive;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   public final Drivetrain drivetrain = new Drivetrain();
+  public final Lift lift = new Lift()
   public static Joystick joystickLeft = new Joystick(Constants.JOYSTICK_LEFT);
   public static Joystick joystickRight = new Joystick(Constants.JOYSTICK_RIGHT);
 
@@ -28,8 +29,10 @@ public class RobotContainer {
   public static double joystickRightAxis = joystickRight.getRawAxis(Constants.JOYSTICK_RIGHTAXIS);
   public static double joystickRightRotate = joystickLeft.getRawAxis(Constants.JOYSTICK_ROTATEAXIS);
 
-  
-  
+  public static JoystickButton liftUpButton = new JoystickButton(xbox, Constants.LIFTUP_AXIS);
+  public static JoystickButton liftDownButton = new JoystickButton(xbox, Constants.LIFTDOWN_AXIS);
+
+  public static double liftButton = xbox.getRawAxis(ButtonConstants.LIFT_AXIS);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -45,6 +48,8 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     drivetrain.setDefaultCommand(new TankDrive(drivetrain, joystickLeftAxis, joystickRightAxis, joystickRightRotate));
+    liftUpButton.whenPressed(new LiftUp(lift, liftUpButton));
+    liftDownButton.whenPressed(new LiftDown(lift, liftDownButton));
   }
 
   /**

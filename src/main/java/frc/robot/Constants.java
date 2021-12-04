@@ -17,9 +17,16 @@ public final class Constants {
     public static final int LEFTMOTOR2 = 1;
     public static final int RIGHTMOTOR1 = 2;
     public static final int RIGHTMOTOR2 = 3;
+
+    public static final int LIFTMOTER = 4;
+    public static final double LIFTSPEED = 1;
+    
     public static final int JOYSTICK_LEFT = 0;
     public static final int JOYSTICK_RIGHT = 1;
     public static final int JOYSTICK_LEFTAXIS = 0;
     public static final int JOYSTICK_RIGHTAXIS = 1;
     public static final int JOYSTICK_ROTATEAXIS = 0;
+
+    public static final int LIFTUP_AXIS = 1; // TODO: Give actual IDs
+    public static final int LIFTDOWN_AXIS = 2;
 }
