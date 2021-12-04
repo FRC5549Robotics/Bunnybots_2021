@@ -12,23 +12,26 @@ import frc.robot.Constants;
 public class Intake extends SubsystemBase {
   /** Creates a new Intake. */
   WPI_TalonSRX motorIntakeLeft, motorIntakeRight;
-  SpeedControllerGroup intakeMotors; 
+   
   
   public Intake() {
     motorIntakeLeft = new WPI_TalonSRX(Constants.MOTOR_INTAKE_LEFT_ID);
     motorIntakeRight = new WPI_TalonSRX(Constants.MOTOR_INTAKE_RIGHT_ID);
-    intakeMotors = new SpeedControllerGroup(motorIntakeLeft, motorIntakeRight);;
+    
   }
 
     public void forward(){
-      intakeMotors.set(Constants.INTAKE_SPEED);
+      motorIntakeLeft.set(Constants.INTAKE_SPEED);
+      motorIntakeRight.set(-Constants.INTAKE_SPEED);
     }
     public void reverse(){
-      intakeMotors.set(Constants.INTAKE_SPEED);
+      motorIntakeLeft.set(-Constants.INTAKE_SPEED);
+      motorIntakeRight.set(Constants.INTAKE_SPEED);
     }
 
     public void stop(){
-      intakeMotors.set(0);
+      motorIntakeLeft.set(0);
+      motorIntakeRight.set(0);
     }
 
   @Override
