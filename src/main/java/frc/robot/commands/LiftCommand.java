@@ -5,7 +5,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Lift;
 
 public class LiftGeneral extends CommandBase {
   /** Creates a new TankDrive. */
@@ -39,23 +39,5 @@ public class LiftGeneral extends CommandBase {
   @Override
   public boolean isFinished() {
     return false;
-  }
-}
-
-public class LiftUp extends CommandBase {
-  @Override
-  public void execute() {
-    m_lift.on();
-    while (m_button.get()) {}
-    m_lift.off()
-  }
-}
-
-public class LiftDown extends CommandBase {
-  @Override
-  public void execute() {
-    m_lift.on(false);
-    while (m_button.get()) {}
-    m_lift.off()
   }
 }
