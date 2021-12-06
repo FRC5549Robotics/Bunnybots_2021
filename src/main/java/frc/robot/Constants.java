@@ -25,8 +25,12 @@ public final class Constants {
     public static final int JOYSTICK_LEFTAXIS = 0;
     public static final int JOYSTICK_RIGHTAXIS = 1;
     public static final int JOYSTICK_ROTATEAXIS = 0;
+    
+    //Intake Motors
     public static final int MOTOR_INTAKE_LEFT_ID = 4;
     public static final int MOTOR_INTAKE_RIGHT_ID = 5;
+    
+    //Intake Declaration
     public static final int INTAKE_AXIS = 1;
     public static final double XBOX_TOLERANCE = 0.25;
     public static final int INTAKE_SPEED = 1;
