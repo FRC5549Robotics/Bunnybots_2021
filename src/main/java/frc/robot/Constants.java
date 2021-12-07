@@ -20,19 +20,27 @@ public final class Constants {
     public static final int RIGHTMOTOR2 = 3;
 
     //Joystick Declaration
-    public static final int JOYSTICK_LEFT = 0;
+    public static final int JOYSTICK_LEFT = 2;
     public static final int JOYSTICK_RIGHT = 1;
     public static final int JOYSTICK_LEFTAXIS = 0;
     public static final int JOYSTICK_RIGHTAXIS = 1;
     public static final int JOYSTICK_ROTATEAXIS = 0;
-    
-    //Intake Motors
+
     public static final int MOTOR_INTAKE_LEFT_ID = 4;
     public static final int MOTOR_INTAKE_RIGHT_ID = 5;
     
-    //Intake Declaration
-    public static final int INTAKE_AXIS = 1;
-    public static final double XBOX_TOLERANCE = 0.25;
     public static final int INTAKE_SPEED = 1;
-    public static final int XBOX_CONTROLLER = 2;
+    public static final int INTAKE_AXIS = 1;
+    
+    public static final double XBOX_TOLERANCE = 0.25;
+    public static final int XBOX_CONTROLLER = 0;
+    
+    public static final int LIFTMOTOR = 4;
+    public static final int LIFTSPEED = 1;
+    
+    public static final int LIFTUP_AXIS = 4;
+    public static final int LIFTDOWN_AXIS = 2;
+    
+    public static final int DRIVE_AUTON_SPEED = 1;
+    public static final int AUTONOMOUSTIME = 1;
 }
