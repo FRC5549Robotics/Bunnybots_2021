@@ -14,7 +14,7 @@ import frc.robot.commands.IntakeReverse;
 import frc.robot.commands.LiftDown;
 import frc.robot.commands.LiftUp;
 import frc.robot.commands.TankDrive;
-import frc.robot.subclasses.TriggerActive
+import frc.robot.subclasses.TriggerActive;
 
 
 /**
