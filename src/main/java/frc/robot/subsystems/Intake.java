@@ -19,7 +19,7 @@ public class Intake extends SubsystemBase {
     // turns right motor in opposite direction of left motor
     // allows for motors to rotate towards the center, intaking objects
     // or rotating outwards from the center, ejecting objects
-    motorIntakeRight.setInverted(True);
+    motorIntakeRight.setInverted(true);
 
     motorIntakeGroup = new SpeedControllerGroup(motorIntakeLeft, motorIntakeRight);
   }
