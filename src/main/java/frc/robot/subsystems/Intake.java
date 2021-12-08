@@ -25,11 +25,11 @@ public class Intake extends SubsystemBase {
   }
 
   public void forward(){
-    motorIntakeGroup.set(Constants.INTAKE_SPEED)
+    motorIntakeGroup.set(Constants.INTAKE_SPEED);
   }
 
   public void reverse(){
-    motorIntakeGroup.set(-Constants.INTAKE_SPEED)
+    motorIntakeGroup.set(-Constants.INTAKE_SPEED);
   }
 
   public void stop(){
