@@ -1,36 +1,34 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
 package frc.robot.subsystems;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.PWMVictorSPX;
-import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Constants;
 
+
 public class Drivetrain extends SubsystemBase {
-  /** Creates a new Drivetrain. */
-  private WPI_TalonSRX motorLeft1 = new WPI_TalonSRX(Constants.LEFTMOTOR1);
-  private WPI_TalonSRX motorLeft2 = new WPI_TalonSRX(Constants.LEFTMOTOR2);
-  private WPI_TalonSRX motorRight1 = new WPI_TalonSRX(Constants.RIGHTMOTOR1);
-  private WPI_TalonSRX motorRight2 = new WPI_TalonSRX(Constants.RIGHTMOTOR2);
-  private SpeedControllerGroup left = new SpeedControllerGroup(motorLeft1, motorLeft2);
-  private SpeedControllerGroup right = new SpeedControllerGroup(motorRight1, motorRight2);
-  
+  /* Drivetrain Class */
+  WPI_TalonSRX leftFront, rightFront, leftBack, rightBack;
+  SpeedControllerGroup leftGroup, rightGroup;
 
-
-  public DifferentialDrive m_drive = new DifferentialDrive(left, right);
   public Drivetrain() {
+    /* Creates a new Drivetrain. */
+    leftMotor1 = new WPI_TalonSRX(Constants.LEFT_MOTOR1);
+    leftMotor2 = new WPI_TalonSRX(Constants.LEFT_MOTOR2);
+    rightMotor1 = new WPI_TalonSRX(Constants.RIGHT_MOTOR1);
+    rightMotor2 = new WPI_TalonSRX(Constants.RIGHT_MOTOR2);
+    leftGroup = new SpeedControllerGroup(leftMotor1, leftMotor2);
+    rightGroup = new SpeedControllerGroup(rightMotor1, rightMotor2);
 
+    drive = new DifferentialDrive(leftGroup, rightGroup);
   }
 
   public void tankDrive(double leftJoystickAxis, double rightJoystickAxis) {
-    m_drive.tankDrive(leftJoystickAxis, rightJoystickAxis);
+    drive.tankDrive(leftJoystickAxis, rightJoystickAxis);
   }
+
   @Override
   public void periodic() {
   }

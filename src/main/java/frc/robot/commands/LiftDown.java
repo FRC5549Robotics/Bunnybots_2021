@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Lift;
 
 public class LiftDown extends CommandBase {
-  /** Creates a new LiftDown. */
+  /* Creates a new LiftDown */
   private final Lift m_Lift;
 
   public LiftDown(Lift lift) {
