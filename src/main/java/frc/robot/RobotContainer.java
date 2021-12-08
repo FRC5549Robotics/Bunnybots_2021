@@ -42,7 +42,7 @@ public class RobotContainer {
   public static XboxController xbox =  new XboxController(Constants.XBOX_CONTROLLER);
 
   // public static double intakebutton = xbox.getRawAxis(Constants.INTAKE_AXIS);
-  public static double intakebutton = new TriggerActive(xbox, Constants.INTAKE_AXIS, Constants.XBOX_TOLERANCE)
+  public static double intakebutton = new TriggerActive(xbox, Constants.INTAKE_AXIS, Constants.XBOX_TOLERANCE);
   public static JoystickButton liftUpButton = new JoystickButton(xbox, Constants.LIFTUP_AXIS);
   public static JoystickButton liftDownButton = new JoystickButton(xbox, Constants.LIFTDOWN_AXIS);
   
