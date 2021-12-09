@@ -62,7 +62,7 @@ public class RobotContainer {
   private void configureButtonBindings() {
     drivetrain.setDefaultCommand(new TankDrive(drivetrain, joystickLeftAxis, joystickRightAxis, joystickRightRotate));
     // intake.setDefaultCommand(new IntakeForward(intake, intakebutton));
-    intakebutton.whenActive(new IntakeForward(intake));
+    intakeButton.whenActive(new IntakeForward(intake));
     liftUpButton.whenPressed(new LiftUp(lift));
     liftDownButton.whenPressed(new LiftDown(lift));
   }
