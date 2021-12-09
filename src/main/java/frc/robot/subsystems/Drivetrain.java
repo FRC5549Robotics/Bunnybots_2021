@@ -12,15 +12,16 @@ public class Drivetrain extends SubsystemBase {
   /* Drivetrain Class */
   WPI_TalonSRX leftFront, rightFront, leftBack, rightBack;
   SpeedControllerGroup leftGroup, rightGroup;
+  DifferentialDrive drive;
 
   public Drivetrain() {
     /* Creates a new Drivetrain. */
-    leftMotor1 = new WPI_TalonSRX(Constants.LEFT_MOTOR1);
-    leftMotor2 = new WPI_TalonSRX(Constants.LEFT_MOTOR2);
-    rightMotor1 = new WPI_TalonSRX(Constants.RIGHT_MOTOR1);
-    rightMotor2 = new WPI_TalonSRX(Constants.RIGHT_MOTOR2);
-    leftGroup = new SpeedControllerGroup(leftMotor1, leftMotor2);
-    rightGroup = new SpeedControllerGroup(rightMotor1, rightMotor2);
+    leftFront = new WPI_TalonSRX(Constants.LEFT_MOTOR1);
+    leftBack = new WPI_TalonSRX(Constants.LEFT_MOTOR2);
+    rightFront = new WPI_TalonSRX(Constants.RIGHT_MOTOR1);
+    rightBack = new WPI_TalonSRX(Constants.RIGHT_MOTOR2);
+    leftGroup = new SpeedControllerGroup(leftFront, leftBack);
+    rightGroup = new SpeedControllerGroup(rightFront, rightBack);
 
     drive = new DifferentialDrive(leftGroup, rightGroup);
   }
