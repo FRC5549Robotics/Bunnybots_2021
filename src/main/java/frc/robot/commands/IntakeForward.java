@@ -11,12 +11,10 @@ import frc.robot.Constants;
 public class IntakeForward extends CommandBase {
   /* Creates a new IntakeForward. */
   private final Intake m_intake;
-  private final double m_axis;
 
-  public IntakeForward(Intake intake, double axis) {
+  public IntakeForward(Intake intake) {
     // Use addRequirements() here to declare subsystem dependencies.
     m_intake = intake;
-    m_axis = axis;
     addRequirements(intake);
   }
 
