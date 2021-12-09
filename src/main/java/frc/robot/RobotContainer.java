@@ -41,8 +41,13 @@ public class RobotContainer {
   /* Xbox Controller */
   public static XboxController xbox =  new XboxController(Constants.XBOX_CONTROLLER);
 
+<<<<<<< HEAD
   public static double intakeButton = xbox.getRawAxis(Constants.INTAKE_AXIS);
   // public static TriggerActive intakeButton = new TriggerActive(xbox, Constants.INTAKE_AXIS, Constants.XBOX_TOLERANCE);
+=======
+  // public static double intakebutton = xbox.getRawAxis(Constants.INTAKE_AXIS);
+  public static TriggerActive intakeButton = new TriggerActive(xbox, Constants.INTAKE_AXIS, Constants.XBOX_TOLERANCE);
+>>>>>>> feat/trigger-class
   public static JoystickButton liftUpButton = new JoystickButton(xbox, Constants.LIFTUP_AXIS);
   public static JoystickButton liftDownButton = new JoystickButton(xbox, Constants.LIFTDOWN_AXIS);
   
@@ -61,8 +66,8 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     drivetrain.setDefaultCommand(new TankDrive(drivetrain, joystickLeftAxis, joystickRightAxis, joystickRightRotate));
-    intake.setDefaultCommand(new IntakeForward(intake, intakeButton));
-    // intakeButton.whenActive(new IntakeForward(intake));
+    // intake.setDefaultCommand(new IntakeForward(intake, intakebutton));
+    intakeButton.whenActive(new IntakeForward(intake));
     liftUpButton.whenPressed(new LiftUp(lift));
     liftDownButton.whenPressed(new LiftDown(lift));
   }
