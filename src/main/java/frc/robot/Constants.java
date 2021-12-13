@@ -14,15 +14,15 @@ package frc.robot;
  */
 public final class Constants {
     //Drive Motors
-    public static final int LEFT_MOTOR1 = 0;
-    public static final int LEFT_MOTOR2 = 1;
-    public static final int RIGHT_MOTOR1 = 2;
-    public static final int RIGHT_MOTOR2 = 3;
+    public static final int LEFT_MOTOR1 = 9;
+    public static final int LEFT_MOTOR2 = 7;
+    public static final int RIGHT_MOTOR1 = 5;
+    public static final int RIGHT_MOTOR2 = 6;
 
     //Joystick Declaration
     public static final int JOYSTICK_LEFT = 2;
     public static final int JOYSTICK_RIGHT = 1;
-    public static final int JOYSTICK_LEFTAXIS = 0;
+    public static final int JOYSTICK_LEFTAXIS = 1;
     public static final int JOYSTICK_RIGHTAXIS = 1;
     public static final int JOYSTICK_ROTATEAXIS = 0;
 
@@ -36,11 +36,11 @@ public final class Constants {
     public static final int XBOX_CONTROLLER = 0;
     
     public static final int LIFT_MOTOR = 4;
-    public static final int LIFT_SPEED = 1;
+    public static final double LIFT_SPEED = 0.1;
     
     public static final int LIFTUP_AXIS = 4;
     public static final int LIFTDOWN_AXIS = 2;
     
-    public static final int DRIVE_AUTO_SPEED = 1;
-    public static final int AUTONOMOUS_TIME = 1;
+    public static final double DRIVE_AUTO_SPEED = 0.5;
+    public static final int AUTONOMOUS_TIME = 10;
 }
