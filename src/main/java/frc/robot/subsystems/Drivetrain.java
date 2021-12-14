@@ -20,10 +20,12 @@ public class Drivetrain extends SubsystemBase {
     leftBack = new WPI_TalonSRX(Constants.LEFT_MOTOR2);
     rightFront = new WPI_TalonSRX(Constants.RIGHT_MOTOR1);
     rightBack = new WPI_TalonSRX(Constants.RIGHT_MOTOR2);
+    rightFront.setInverted(true);
+    rightBack.setInverted(true);
     leftGroup = new SpeedControllerGroup(leftFront, leftBack);
     rightGroup = new SpeedControllerGroup(rightFront, rightBack);
 
-    drive = new DifferentialDrive(leftGroup, rightGroup);
+    drive = new DifferentialDrive(rightGroup, leftFront);
   }
 
   public void tankDrive(double leftJoystickAxis, double rightJoystickAxis) {
