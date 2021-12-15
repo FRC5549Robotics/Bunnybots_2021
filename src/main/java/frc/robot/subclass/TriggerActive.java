@@ -1,4 +1,4 @@
-package frc.robot.subclass;
+/* package frc.robot.subclass;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -18,4 +18,4 @@ public class TriggerActive extends Trigger {
     public boolean get() {
       return m_joystick.getRawAxis(m_axisNumber) > m_tolerance;
     }
-  }
+  } */
