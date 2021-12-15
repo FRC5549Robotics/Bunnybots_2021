@@ -17,7 +17,8 @@ public final class Constants {
     public static final int LEFT_MOTOR1 = 9;
     public static final int LEFT_MOTOR2 = 7;
     public static final int RIGHT_MOTOR1 = 5;
-    public static final int RIGHT_MOTOR2 = 6;
+    public static final int RIGHT_MOTOR2 = 11;
+    public static final double SCALING_FACTOR = -0.75;
 
     //Joystick Declaration
     public static final int JOYSTICK_LEFT = 2;
@@ -26,10 +27,10 @@ public final class Constants {
     public static final int JOYSTICK_RIGHTAXIS = 1;
     public static final int JOYSTICK_ROTATEAXIS = 0;
 
-    public static final int MOTOR_INTAKE_LEFT = 4;
-    public static final int MOTOR_INTAKE_RIGHT = 5;
+    public static final int MOTOR_INTAKE_LEFT = 3;
+    public static final int MOTOR_INTAKE_RIGHT = 12;
     
-    public static final int INTAKE_SPEED = 1;
+    public static final double INTAKE_SPEED = 0.5;
     public static final int INTAKE_AXIS = 1;
     
     public static final double XBOX_TOLERANCE = 0.25;
