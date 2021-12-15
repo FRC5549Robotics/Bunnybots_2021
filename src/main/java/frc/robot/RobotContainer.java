@@ -14,7 +14,8 @@ import frc.robot.commands.IntakeReverse;
 import frc.robot.commands.LiftDown;
 import frc.robot.commands.LiftUp;
 import frc.robot.commands.TankDrive;
-import frc.robot.subclass.TriggerActive;
+import frc.robot.commands.IntakeStop;
+// import frc.robot.subclass.TriggerActive;
 
 
 /**
@@ -34,15 +35,17 @@ public class RobotContainer {
   public static Joystick joystickLeft = new Joystick(Constants.JOYSTICK_LEFT);
   public static Joystick joystickRight = new Joystick(Constants.JOYSTICK_RIGHT);
 
-  public static double joystickLeftAxis = joystickLeft.getRawAxis(Constants.JOYSTICK_LEFTAXIS);
-  public static double joystickRightAxis = joystickRight.getRawAxis(Constants.JOYSTICK_RIGHTAXIS);
-  public static double joystickRightRotate = joystickLeft.getRawAxis(Constants.JOYSTICK_ROTATEAXIS);
+  //public static double joystickLeftAxis = joystickLeft.getRawAxis(Constants.JOYSTICK_LEFTAXIS);
+  //public static double joystickRightAxis = joystickRight.getRawAxis(Constants.JOYSTICK_RIGHTAXIS);
+  //public static double joystickRightRotate = joystickLeft.getRawAxis(Constants.JOYSTICK_ROTATEAXIS);
 
   /* Xbox Controller */
   public static XboxController xbox =  new XboxController(Constants.XBOX_CONTROLLER);
 
   // public static double intakebutton = xbox.getRawAxis(Constants.INTAKE_AXIS);
-  public static TriggerActive intakeButton = new TriggerActive(xbox, Constants.INTAKE_AXIS, Constants.XBOX_TOLERANCE);
+  // public static TriggerActive intakeButton = new TriggerActive(xbox, Constants.INTAKE_AXIS, Constants.XBOX_TOLERANCE);
+  public static JoystickButton intakeButton = new JoystickButton(xbox, 3);
+  public static JoystickButton intakeReleaseButton = new JoystickButton(xbox, 1);
   public static JoystickButton liftUpButton = new JoystickButton(xbox, Constants.LIFTUP_AXIS);
   public static JoystickButton liftDownButton = new JoystickButton(xbox, Constants.LIFTDOWN_AXIS);
   
@@ -60,9 +63,13 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    drivetrain.setDefaultCommand(new TankDrive(drivetrain, joystickLeftAxis, joystickRightAxis, joystickRightRotate));
+    drivetrain.setDefaultCommand(new TankDrive(drivetrain, joystickLeft, joystickRight));
     // intake.setDefaultCommand(new IntakeForward(intake, intakebutton));
-    intakeButton.whenActive(new IntakeForward(intake));
+    // intakeButton.whenActive(new IntakeForward(intake));
+    intakeButton.whenPressed(new IntakeForward(intake));
+    intakeButton.whenReleased(new IntakeStop(intake));
+    intakeReleaseButton.whenPressed(new IntakeReverse(intake));
+    intakeReleaseButton.whenReleased(new IntakeStop(intake));
     liftUpButton.whenPressed(new LiftUp(lift));
     liftDownButton.whenPressed(new LiftDown(lift));
   }
