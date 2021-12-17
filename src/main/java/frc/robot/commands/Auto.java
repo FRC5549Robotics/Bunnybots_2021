@@ -32,7 +32,7 @@ public class Auto extends CommandBase {
   public void execute() {
     m_time = (System.currentTimeMillis() - startTime) / 1000;
     if ((m_time >= 0.0) && (m_time < m_maxTime)) {
-      m_drivetrain.tankDrive(Constants.DRIVE_AUTO_SPEED, Constants.DRIVE_AUTO_SPEED);
+      m_drivetrain.autoDrive(-Constants.DRIVE_AUTO_SPEED, -Constants.DRIVE_AUTO_SPEED);
     } 
     if ((m_time >= m_maxTime)){
       myAutoFinished = true;
