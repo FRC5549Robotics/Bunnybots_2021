@@ -15,6 +15,7 @@ import frc.robot.commands.LiftDown;
 import frc.robot.commands.LiftUp;
 import frc.robot.commands.TankDrive;
 import frc.robot.commands.IntakeStop;
+import frc.robot.commands.LiftStop;
 // import frc.robot.subclass.TriggerActive;
 
 
@@ -44,8 +45,9 @@ public class RobotContainer {
 
   // public static double intakebutton = xbox.getRawAxis(Constants.INTAKE_AXIS);
   // public static TriggerActive intakeButton = new TriggerActive(xbox, Constants.INTAKE_AXIS, Constants.XBOX_TOLERANCE);
-  public static JoystickButton intakeButton = new JoystickButton(xbox, 3);
-  public static JoystickButton intakeReleaseButton = new JoystickButton(xbox, 1);
+
+  public static JoystickButton intakeButton = new JoystickButton(xbox, Constants.INTAKE_BUTTON);
+  public static JoystickButton intakeReleaseButton = new JoystickButton(xbox, Constants.INTAKE_REVERSE_BUTTON);
   public static JoystickButton liftUpButton = new JoystickButton(xbox, Constants.LIFTUP_AXIS);
   public static JoystickButton liftDownButton = new JoystickButton(xbox, Constants.LIFTDOWN_AXIS);
   
@@ -65,13 +67,18 @@ public class RobotContainer {
   private void configureButtonBindings() {
     drivetrain.setDefaultCommand(new TankDrive(drivetrain, joystickLeft, joystickRight));
     // intake.setDefaultCommand(new IntakeForward(intake, intakebutton));
-    // intakeButton.whenActive(new IntakeForward(intake));
+    //intakeButton.whenActive(new IntakeForward(intake));
+    /*
     intakeButton.whenPressed(new IntakeForward(intake));
     intakeButton.whenReleased(new IntakeStop(intake));
     intakeReleaseButton.whenPressed(new IntakeReverse(intake));
     intakeReleaseButton.whenReleased(new IntakeStop(intake));
+    
     liftUpButton.whenPressed(new LiftUp(lift));
+    liftUpButton.whenReleased(new LiftStop(lift));
     liftDownButton.whenPressed(new LiftDown(lift));
+    liftDownButton.whenReleased(new LiftStop(lift));
+    */  
   }
 
   /**
