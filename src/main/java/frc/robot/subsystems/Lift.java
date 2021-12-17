@@ -44,8 +44,4 @@ public class Lift extends SubsystemBase {
     }
     
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b2e0534c863aed063d87a18c1c417aeb70d4de2d
