@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Created by https://www.gitignore.io/api/c++,java,linux,macos,gradle,windows,visualstudiocode
 
 ### C++ ###
@@ -35,6 +36,8 @@
 *.app
 
 ### Java ###
+=======
+>>>>>>> b2e0534c863aed063d87a18c1c417aeb70d4de2d
 # Compiled class file
 *.class
 
@@ -58,6 +61,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+<<<<<<< HEAD
 
 ### Linux ###
 *~
@@ -137,6 +141,11 @@ $RECYCLE.BIN/
 ### Gradle ###
 .gradle
 /build/
+=======
+.gradle
+**/build/
+!src/**/build/
+>>>>>>> b2e0534c863aed063d87a18c1c417aeb70d4de2d
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -146,6 +155,7 @@ gradle-app.setting
 
 # Cache of project
 .gradletasknamecache
+<<<<<<< HEAD
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
@@ -159,3 +169,5 @@ imgui.ini
 
 
 # End of https://www.gitignore.io/api/c++,java,linux,macos,gradle,windows,visualstudiocode
+=======
+>>>>>>> b2e0534c863aed063d87a18c1c417aeb70d4de2d

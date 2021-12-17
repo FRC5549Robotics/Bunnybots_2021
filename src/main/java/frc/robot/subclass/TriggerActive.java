@@ -18,4 +18,8 @@ public class TriggerActive extends Trigger {
     public boolean get() {
       return m_joystick.getRawAxis(m_axisNumber) > m_tolerance;
     }
+<<<<<<< HEAD
   } */
+=======
+  } */
+>>>>>>> b2e0534c863aed063d87a18c1c417aeb70d4de2d

@@ -48,4 +48,8 @@ public final class Constants {
     
     public static final double DRIVE_AUTO_SPEED = 0.5;
     public static final int AUTONOMOUS_TIME = 7;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b2e0534c863aed063d87a18c1c417aeb70d4de2d
